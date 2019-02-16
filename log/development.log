@@ -4071,3 +4071,23 @@ Processing by PostsController#index as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
   Rendered posts/index.html.erb within layouts/application (12.7ms)
 Completed 200 OK in 60ms (Views: 46.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/authors/4/posts/new" for 72.229.188.23 at 2019-02-16 22:00:53 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  Rendered posts/_form.html.erb (2.6ms)
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 72.229.188.23 at 2019-02-16 22:01:22 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5G0BpALle2WzIEoAF6wH4syodWCFQq0hQi/ZxMHnZyYeE1GlSiVMcEcIn15gAzJHL9iSB5/wXd5wtyLCVH9KQQ==", "post"=>{"author_id"=>"4", "title"=>"Crazy World", "description"=>"This is our Crazy World"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Crazy World"], ["description", "This is our Crazy World"], ["author_id", 4], ["created_at", "2019-02-16 22:01:22.177157"], ["updated_at", "2019-02-16 22:01:22.177157"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Redirected to http://142.93.113.210:47934/posts/17
+Completed 302 Found in 9ms (ActiveRecord: 4.0ms)
