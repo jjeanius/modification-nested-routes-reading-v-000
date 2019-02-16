@@ -4248,3 +4248,24 @@ SyntaxError (/home/jjeanius/modification-nested-routes-reading-v-000/app/views/p
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
+
+
+Started GET "/authors/4/posts/new" for 72.229.188.23 at 2019-02-16 22:45:47 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (3.0ms)
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 72.229.188.23 at 2019-02-16 22:46:01 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MT0BYdtRBU5HTLOYBdcycGOhLu5r1iH/eC3kijw2i4DLQ1Fgk5EyW7NkZsZyeAfVgNHJiXFk0QBKtR+Mqa6m5w==", "post"=>{"author_id"=>"4", "title"=>"Rails Introduction Quiz", "description"=>"ok\r\n"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Rails Introduction Quiz"], ["description", "ok\r\n"], ["author_id", 4], ["created_at", "2019-02-16 22:46:01.807608"], ["updated_at", "2019-02-16 22:46:01.807608"]]
+  [1m[36m (67.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://142.93.113.210:47934/posts/18
+Completed 302 Found in 72ms (ActiveRecord: 67.8ms)
