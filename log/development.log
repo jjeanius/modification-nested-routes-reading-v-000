@@ -3912,3 +3912,13 @@ Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.
 
 Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 72.229.188.23 at 2019-02-16 21:51:48 +0000
 Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/authors/4/posts" for 72.229.188.23 at 2019-02-16 21:51:51 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Parameters: {"author_id"=>"4"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 31.1ms | ActiveRecord: 0.4ms)
