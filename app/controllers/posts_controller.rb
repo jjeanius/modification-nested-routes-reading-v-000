@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 if para
   def edit
-    
+
     @post = Post.find(params[:id])
   end
 
